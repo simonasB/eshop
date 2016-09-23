@@ -1,3 +1,8 @@
+vartotojas:
+    resource: "@VartotojasBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 preke:
     resource: "@PrekeBundle/Controller/"
     type:     annotation

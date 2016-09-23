@@ -1,0 +1,4 @@
+services:
+#    vartotojas.example:
+#        class: VartotojasBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

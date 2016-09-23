@@ -20,3 +20,10 @@ Make sure you have installed php. You can download it from http://windows.php.ne
 9. To update database schema: php bin/console doctrine:schema:update --force
 10. To load fixtures and fill up database with dummy data: php bin/console doctrine:fixtures:load
 11. To start app: php bin/console server:run --port={specifyport}. Note that default port is 8000
+
+A few common commands:
+
+1. For clearing cache: php bin/console cache:clear or php bin/console cache:clear --env=prod for production
+2. Generate bundle: php bin/console generate:bundle
+3. Generate entity: php bin/console doctrine:generate:entity
+4. Generate crud: php bin/console doctrine:generate:crud

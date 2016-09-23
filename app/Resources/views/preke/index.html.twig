@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Preke list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pavadinimas</th>
+                <th>Aprasymas</th>
+                <th>Kaina</th>
+                <th>Akcijinekaina</th>
+                <th>Kategorija</th>
+                <th>Likusiukiekis</th>
+                <th>Parduotukiekis</th>
+                <th>Busena</th>
+                <th>Spalva</th>
+                <th>Pagaminimodata</th>
+                <th>Kilmessalis</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for preke in prekes %}
+            <tr>
+                <td><a href="{{ path('preke_show', { 'id': preke.id }) }}">{{ preke.id }}</a></td>
+                <td>{{ preke.pavadinimas }}</td>
+                <td>{{ preke.aprasymas }}</td>
+                <td>{{ preke.kaina }}</td>
+                <td>{{ preke.akcijineKaina }}</td>
+                <td>{{ preke.kategorija }}</td>
+                <td>{{ preke.likusiuKiekis }}</td>
+                <td>{{ preke.parduotuKiekis }}</td>
+                <td>{{ preke.busena }}</td>
+                <td>{{ preke.spalva }}</td>
+                <td>{% if preke.pagaminimoData %}{{ preke.pagaminimoData|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ preke.kilmesSalis }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('preke_show', { 'id': preke.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('preke_edit', { 'id': preke.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('preke_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

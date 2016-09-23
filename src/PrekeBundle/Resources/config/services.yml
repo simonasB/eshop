@@ -1,0 +1,4 @@
+services:
+#    preke.example:
+#        class: PrekeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
